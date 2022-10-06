@@ -2,8 +2,8 @@ require("@nomicfoundation/hardhat-toolbox");
 
 /** @type import('hardhat/config').HardhatUserConfig */
 const dotenv = require("dotenv");
-dotenv.config({path: __dirname + '/.env'});
-const {PRIVATE_KEY, BSC_API_KEY, ETH_API_KEY, AVAX_API_KEY, POLYGON_API_KEY} = process.env;
+dotenv.config({ path: __dirname + "/.env" });
+const { PRIVATE_KEY, ETH_API_KEY } = process.env;
 module.exports = {
   networks: {
     bscTestnet: {
