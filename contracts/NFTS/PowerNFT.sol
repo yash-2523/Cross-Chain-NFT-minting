@@ -110,6 +110,8 @@ contract PowerNFT is ERC721URIStorage {
         _mint(user, newItemId);
         _setTokenURI(newItemId, _nftInfo.tokenURI);
         typesOfAllNFTs[newItemId] = _nftType;
+        _nftInfo.totalMinted += 1;
+        nftTypes[_nftType] = _nftInfo;
         emit NFTMinted(newItemId, _nftType, user);
         return newItemId;
     }
@@ -124,6 +126,8 @@ contract PowerNFT is ERC721URIStorage {
         _mint(user, newItemId);
         _setTokenURI(newItemId, _nftInfo.tokenURI);
         typesOfAllNFTs[newItemId] = _nftType;
+        _nftInfo.totalMinted += 1;
+        nftTypes[_nftType] = _nftInfo;
         emit NFTMinted(newItemId, _nftType, user);
         return newItemId;
     }

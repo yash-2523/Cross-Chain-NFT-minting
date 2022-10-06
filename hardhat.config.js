@@ -28,6 +28,7 @@ module.exports = {
     },
     eth: {
       url: "https://mainnet.infura.io/v3/d8a462ebbfed401891f2a1a8e1dc49af",
+      gasPrice: 18000000000,
       accounts: [`0x${PRIVATE_KEY}`]
     },
     bsc: {
@@ -52,6 +53,6 @@ module.exports = {
     }
   },
   etherscan: {
-    apiKey: ETH_API_KEY
+    apiKey: BSC_API_KEY
   }
 };
