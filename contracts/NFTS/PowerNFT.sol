@@ -10,7 +10,7 @@ contract PowerNFT is ERC721URIStorage {
     using Counters for Counters.Counter;
     Counters.Counter public _tokenIds;
     Counters.Counter public _typeIds;
-    address owner;
+    address public owner;
     mapping(uint256 => uint256) public powerOfNFTs;
     mapping(address => bool) public isMinter;
 
