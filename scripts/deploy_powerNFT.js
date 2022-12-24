@@ -16,12 +16,12 @@ async function main() {
   // );
 
   const PowerNFT = await hre.ethers.getContractFactory("PowerNFT");
-  const powerNFT = await PowerNFT.deploy("0x4129cBDA42e6381A12e7F29638aee7cE2289a79D");
+  const powerNFT = await PowerNFT.deploy("0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E");
 
   await powerNFT.deployed();
 
   console.log(
-    `powerNFT delployed deployed to ${powerNFT.address}`
+    `powerNFT delployed to ${powerNFT.address}`
   );
 
   // let tx = await mystableToken.approve(powerNFT.address, ethers.utils.parseEther("100000000000000000000000000000000000000000000000"))

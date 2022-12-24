@@ -3,7 +3,7 @@ require("@nomicfoundation/hardhat-toolbox");
 /** @type import('hardhat/config').HardhatUserConfig */
 const dotenv = require("dotenv");
 dotenv.config({ path: __dirname + "/.env" });
-const { PRIVATE_KEY, ETH_API_KEY, BSC_API_KEY, AXAX_API_KEY } = process.env;
+const { PRIVATE_KEY, ETH_API_KEY, BSC_API_KEY, AVAX_API_KEY,POLYGON_API_KEY } = process.env;
 module.exports = {
   networks: {
     bscTestnet: {
@@ -17,7 +17,7 @@ module.exports = {
       accounts: [`0x${PRIVATE_KEY}`]
     },
     mumbaiTestnet: {
-      url: "https://polygon-mumbai.infura.io/v3/901066b27d21462bad7b742e152cfb27",
+      url: "https://polygon-mumbai.g.alchemy.com/v2/gYBTtYN2E1VFacqmze30tEMVBO8H2lwP",
       accounts: [`0x${PRIVATE_KEY}`]
     },
     avalancheTest: {
@@ -39,8 +39,12 @@ module.exports = {
     },
     avax: {
       url: 'https://api.avax.network/ext/bc/C/rpc',
-      gasPrice: 225000000000,
+      gasPrice: 26000000000,
       chainId: 43114,
+      accounts: [`0x${PRIVATE_KEY}`]
+    },
+    optimism: {
+      url: "https://optimism-goerli.infura.io/v3/5c7db01997694b50aceb8bded54bc41f",
       accounts: [`0x${PRIVATE_KEY}`]
     }
   },
@@ -53,6 +57,6 @@ module.exports = {
     }
   },
   etherscan: {
-    apiKey: ETH_API_KEY
+    apiKey: AVAX_API_KEY
   }
 };

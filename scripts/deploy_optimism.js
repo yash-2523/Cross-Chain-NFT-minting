@@ -8,17 +8,17 @@ const hre = require("hardhat");
 
 async function main() {
 
-  // const MYStableToken = await hre.ethers.getContractFactory("MYStableToken");
-  // const mystableToken = await MYStableToken.deploy();  
-  // await mystableToken.deployed();
-  // console.log(
-  //   `stable token on fuji testnet deployed to ${mystableToken.address}`
-  // );
+  const MYStableToken = await hre.ethers.getContractFactory("MYStableToken");
+  const mystableToken = await MYStableToken.deploy();  
+  await mystableToken.deployed();
+  console.log(
+    `stable token on fuji testnet deployed to ${mystableToken.address}`
+  );
 
-  const mystableToken = await hre.ethers.getContractAt("MYStableToken", "0xDA41880E47d512c337515221b5e9946DDB43dC99");
+ 
 
   const NFTMessenger = await hre.ethers.getContractFactory("NFTMessenger");
-  const nftMessenger = await NFTMessenger.deploy("0x93f54D755A063cE7bB9e6Ac47Eccc8e33411d706", "0xDA41880E47d512c337515221b5e9946DDB43dC99");
+  const nftMessenger = await NFTMessenger.deploy("0x6aB5Ae6822647046626e83ee6dB8187151E1d5ab", mystableToken.address);
 
   await nftMessenger.deployed();
 

@@ -15,7 +15,7 @@ async function main() {
   const mystableToken = await MYStableToken.deploy();  
   await mystableToken.deployed();
   console.log(
-    `stable token on rinkeby deployed to ${mystableToken.address}`
+    `stable token on polygon deployed to ${mystableToken.address}`
   );
 
   const PowerNFT = await hre.ethers.getContractFactory("PowerNFT");
